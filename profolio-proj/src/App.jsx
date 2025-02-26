@@ -1,43 +1,39 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
-import Welcome from './components/welcome';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects'; // Import Projects component
+import Welcome from "./components/Welcome";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 
 function App() {
     // State to toggle dark mode
     const [darkMode, setDarkMode] = useState(false);
-    const [showProjects, setShowProjects] = useState(false); // State to show Projects
+    const [showProjects, setShowProjects] = useState(false); // State to track if projects should be shown
 
     // Function to toggle dark mode
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
-        document.documentElement.classList.toggle('dark'); // Add/remove 'dark' class from <html>
-    };
-
-    // Function to handle the "next" button click
-    const onNextClick = () => {
-        setShowProjects(true); // This will show the Projects component
-        window.scrollTo({
-            top: 0,
-            left: window.innerWidth, // Move page to the left
-            behavior: "smooth",
-        });
+        document.documentElement.classList.toggle("dark"); // Add/remove 'dark' class from <html>
     };
 
     return (
-        <div>
-            <div className="relative min-h-screen md:h-auto sm:h-auto bg-gray-50 dark:bg-gray-700">
-                <Navbar />
-                <Welcome onNextClick={onNextClick} /> {/* Pass the onNextClick to Welcome */}
-                <About />
-                <Skills />
-                
-                {showProjects && <Projects />} {/* Conditionally render the Projects component */}
+        <div className={`relative min-h-screen md:h-auto sm:h-auto bg-gray-50 dark:bg-gray-700 overflow-hidden`}>
+            <Navbar />
+            
+            {/* Sliding Container */}
+            <div className={`flex transition-transform duration-700 ease-in-out`}>
+                {/* Main Page (Welcome, About, Skills) */}
+                <div className="w-full min-w-full">
+                    <Welcome/>
+                    <About />
+                    <Skills />
+                    <Projects/>
+                </div>
             </div>
-            <footer className="text-center text-gray-600 dark:text-gray-300 py-4">
+
+            {/* Footer */}
+            <footer className="text-center text-gray-600 dark:text-gray-300 py-4 bg-neutral-300">
                 &copy; {new Date().getFullYear()} Nir Froimovich. All rights reserved.
             </footer>
         </div>

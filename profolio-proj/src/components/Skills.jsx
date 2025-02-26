@@ -31,8 +31,8 @@ const Skills = () => {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="flex justify-center items-center flex-col mb-12">
                     <h1 className="text-4xl font-semibold text-gray-800 dark:text-white mb-4">Skills</h1>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 text-center max-w-3xl mb-12">
-                        Here's a quick overview of my skill level in various areas. I'm constantly improving and learning to keep up with the latest trends in software engineering.
+                    <p className="text-lg text-gray-600 dark:text-gray-300 font-light leading-relaxed text-center max-w-3xl ">
+                        Here's a quick overview of my skills in various areas. I'm constantly improving and learning to keep up with the latest trends in software engineering.
                     </p>
                 </div>
 
@@ -53,6 +53,11 @@ const Skills = () => {
                             <h3 className="text-xl font-semibold text-gray-800 dark:text-white text-center">{skill}</h3>
                         </div>
                     ))}
+                </div>
+                <div className="flex justify-center items-center flex-col">
+                    <p className="text-xl text-gray-700 font-light leading-relaxed mt-20">
+                        And More...                    
+                    </p>
                 </div>
             </div>
         </section>
