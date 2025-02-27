@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
-import Welcome from "./components/Welcome";
+import Welcome from "./components/welcome";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";

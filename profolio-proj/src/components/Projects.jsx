@@ -54,7 +54,7 @@ const Projects = () => {
     <section id="projects" className="relative bg-gray-100 dark:bg-gray-900 h-screen px-6 py-16 flex flex-col items-center">
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold text-gray-800 dark:text-white">My Projects</h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300 mt-3">
+        <p className="text-lg text-gray-600 dark:text-gray-300 mt-3 font-light">
           A collection of my work, showcasing my skills and passion for development.
         </p>
       </div>
