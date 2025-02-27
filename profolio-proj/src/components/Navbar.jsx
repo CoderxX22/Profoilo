@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import DarkModeToggle from "./DarkmodeToggle";
@@ -42,33 +42,36 @@ const Navbar = () => {
       <div className="container mx-auto py-3 flex justify-between items-center">
         <a 
           href="" 
-          className="text-xl font-stretch-50% font-extrabold"
+          className="text-xl font-stretch-50% font-extrabold transition-all duration-300"
           onClick={scrollToTop} // Add scroll to top on Home link click
         >
-        NF
+          NF
         </a>
         <ul className="hidden md:flex space-x-6 font-mono justify-center flex-1">
           <li>
-            <a 
-              href="" 
-              className="hover:text-gray-400"
-              onClick={scrollToTop} // Scroll to top on "Home" link click
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#about" className="hover:text-gray-400">
+            <a href="#about" className="hover:text-gray-400 transition-all duration-300">
               About
             </a>
           </li>
           <li>
-            <a href="#projects" className="hover:text-gray-400">
+            <a 
+              href="#skills" 
+              className="hover:text-gray-400 transition-all duration-300"
+              onClick={scrollToTop} // Scroll to top on "Home" link click
+            >
+              skills
+            </a>
+          </li>
+          <li>
+            <a href="#projects" className="hover:text-gray-400 transition-all duration-300">
               Projects
             </a>
           </li>
           <li>
-            <a href="#contact" className="hover:text-gray-400">
+            <a 
+              href="#contact" 
+              className="hover:text-gray-400 border-1 rounded-lg py-2 px-4 transition-all duration-300"
+            >
               Contact me
             </a>
           </li>
@@ -76,7 +79,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden focus:outline-none"
+          className="md:hidden focus:outline-none transition-all duration-300"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
