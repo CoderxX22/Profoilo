@@ -53,7 +53,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="relative bg-gray-100 dark:bg-gray-900 md:h-screen sm:h-screen h-screen justify-center px-6 py-16 flex flex-col items-center">
+    <section id="projects" className="relative bg-gray-100 dark:bg-neutral-700 md:h-screen sm:h-screen h-screen justify-center px-6 py-16 flex flex-col items-center">
       <div className="text-center mb-8">
         <h1 className="text-5xl font-bold text-gray-800 dark:text-white">My Projects</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 mt-3 font-light">
@@ -61,7 +61,7 @@ const Projects = () => {
         </p>
       </div>
 
-      <div className="relative w-full max-w-5xl p-5 bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex items-center justify-center">
+      <div className="relative w-full max-w-5xl p-5 bg-white dark:bg-neutral-800 rounded-lg shadow-lg overflow-hidden flex items-center justify-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}

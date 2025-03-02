@@ -1,10 +1,14 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from 'react';
 import { Moon, Sun } from "lucide-react";
 
-const DarkMode = () => {
+const DarkmodeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
 
+  console.log(document.body.classList);
+  console.log(darkMode);
+
+  
   useEffect(() => {
     // Always reset to light mode on server start
     if (!sessionStorage.getItem('sessionInitialized')) {
@@ -38,14 +42,16 @@ const DarkMode = () => {
     }
   };
 
+
   return (
-      <button
+    <button
       onClick={toggleDarkMode}
-      className={`p-2`}
+      className="p-2"
+      aria-label="Toggle dark mode"
     >
       {darkMode ? <Sun size={20} /> : <Moon size={20} />}
     </button>
   );
 };
 
-export default DarkMode;
+export default DarkmodeToggle;

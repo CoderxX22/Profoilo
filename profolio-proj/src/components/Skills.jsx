@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 
 const Skills = () => {
@@ -27,7 +27,7 @@ const Skills = () => {
     }, []);
 
     return (
-        <section id="skills" className="relative min-h-screen bg-gray-50 dark:bg-gray-800 py-16">
+        <section id="skills" className="relative min-h-screen bg-gray-50 dark:bg-neutral-600 py-16">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="flex justify-center items-center flex-col mb-12">
                     <h1 className="text-4xl font-semibold text-gray-800 dark:text-white mb-4">Skills</h1>
@@ -49,13 +49,17 @@ const Skills = () => {
                         "Data Structures and Algorithms",
                         "Cloud Principles"
                     ].map((skill, index) => (
-                        <div key={index} className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 flex justify-center items-center h-32">
+                        <div
+                            key={index}
+                            className={`skill-card bg-white dark:bg-neutral-700 rounded-lg shadow-lg p-8 flex justify-center items-center h-32 ${animationStarted ? "animate" : ""}`}
+                            style={{ animationDelay: `${(index + 1) * 0.1}s` }}
+                        >
                             <h3 className="text-xl font-semibold text-gray-800 dark:text-white text-center">{skill}</h3>
                         </div>
                     ))}
                 </div>
                 <div className="flex justify-center items-center flex-col">
-                    <p className="text-xl text-gray-700 font-light leading-relaxed mt-20">
+                    <p className="text-xl text-gray-700 font-light leading-relaxed mt-20 dark:text-gray-300">
                         And More...                    
                     </p>
                 </div>

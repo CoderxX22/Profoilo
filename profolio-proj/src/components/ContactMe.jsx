@@ -45,7 +45,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="relative bg-gray-50 dark:bg-gray-900 md:h-fit sm:h-fit h-screen px-6 py-16 flex flex-col items-center">
+        <section id="contact" className="relative bg-gray-50 dark:bg-neutral-600 md:h-fit sm:h-fit h-screen px-6 py-16 flex flex-col items-center">
             <div className="text-center mb-12">
                 <h1 className="text-4xl font-bold text-gray-800 dark:text-white">Contact Me</h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 font-light max-w-xl mx-auto">
@@ -62,7 +62,7 @@ const Contact = () => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Enter your full name"
-                        className="w-full p-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500"
+                        className="w-full p-3 border rounded-lg bg-white dark:bg-neutral-700 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500"
                         required
                     />
                 </div>
@@ -75,7 +75,7 @@ const Contact = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter your email"
-                        className="w-full p-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500"
+                        className="w-full p-3 border rounded-lg bg-white dark:bg-neutral-700 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500"
                         required
                     />
                     {emailError && <p className="text-red-500 text-sm mt-1">{emailError}</p>}
@@ -88,7 +88,7 @@ const Contact = () => {
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         placeholder="Enter your message"
-                        className="w-full p-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500 resize-none"
+                        className="w-full p-3 border rounded-lg bg-white dark:bg-neutral-700 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500 resize-none"
                         required
                     />
                 </div>
@@ -115,7 +115,7 @@ const Contact = () => {
                         value={companyName}
                         onChange={(e) => setCompanyName(e.target.value)}
                         placeholder="Enter company name"
-                        className="w-full p-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500"
+                        className="w-full p-3 border rounded-lg bg-white dark:bg-neutral-700 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500"
                         required = {isCompany}
                     />
                     <div className="flex items-center">
@@ -124,7 +124,7 @@ const Contact = () => {
                             type="checkbox"
                             checked={sendCV}
                             onChange={() => setSendCV(!sendCV)}
-                            className="mr-3 w-5 h-5 text-blue-500 border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                            className="mr-3 w-5 h-5 text-blue-500 border-gray-300 dark:border-gray-700 dark:bg-neutral-700 dark:text-gray-200"
                         />
                         <label className="text-lg text-gray-700 dark:text-gray-200 font-light" htmlFor="CV">I'll be glad if you send me your CV</label>
                     </div>
