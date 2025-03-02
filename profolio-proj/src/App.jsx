@@ -6,12 +6,13 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/ContactMe";
+import useTrackVisitors from "./hooks/firabase";
 
 function App() {
     // State to toggle dark mode
     const [darkMode, setDarkMode] = useState(false);
     const [showProjects, setShowProjects] = useState(false); // State to track if projects should be shown
-
+    useTrackVisitors();
     // Function to toggle dark mode
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
