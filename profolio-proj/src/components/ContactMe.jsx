@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import React from "react";
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
     const [email, setEmail] = useState("");
@@ -13,26 +14,38 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailRegex.test(email)) {
             setEmailError("Please enter a valid email address.");
         } else {
             setEmailError("");
-            // Log the form data (you can replace this with actual API submission)
-            console.log({
+
+            // Construct the email data to send
+            const emailData = {
                 name,
                 email,
                 message,
-                isCompany,
+                isCompany: isCompany ? "Yes" : "No",
                 companyName,
-                sendCV
-            });
+                sendCV: sendCV ? "Yes" : "No",
+            };
+
+            // Send email using EmailJS
+            emailjs.send('service_423wnkn', 'template_8yx4t59', emailData, 'gsr529LqTVxZosW70')
+                .then((response) => {
+                    console.log('Email sent successfully:', response);
+                    alert('Your message has been sent!');
+                })
+                .catch((error) => {
+                    console.log('Email sending error:', error);
+                    alert('Something went wrong, please try again.');
+                });
         }
     };
 
     return (
-        <section id="contact" className="relative bg-gray-50 dark:bg-gray-900 h-screen px-6 py-16 flex flex-col items-center">
+        <section id="contact" className="relative bg-gray-50 dark:bg-gray-900 md:h-fit sm:h-fit h-screen px-6 py-16 flex flex-col items-center">
             <div className="text-center mb-12">
                 <h1 className="text-4xl font-bold text-gray-800 dark:text-white">Contact Me</h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 font-light max-w-xl mx-auto">
@@ -50,6 +63,7 @@ const Contact = () => {
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Enter your full name"
                         className="w-full p-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500"
+                        required
                     />
                 </div>
 
@@ -62,6 +76,7 @@ const Contact = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter your email"
                         className="w-full p-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500"
+                        required
                     />
                     {emailError && <p className="text-red-500 text-sm mt-1">{emailError}</p>}
                 </div>
@@ -74,6 +89,7 @@ const Contact = () => {
                         onChange={(e) => setMessage(e.target.value)}
                         placeholder="Enter your message"
                         className="w-full p-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500 resize-none"
+                        required
                     />
                 </div>
 
@@ -100,6 +116,7 @@ const Contact = () => {
                         onChange={(e) => setCompanyName(e.target.value)}
                         placeholder="Enter company name"
                         className="w-full p-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500"
+                        required = {isCompany}
                     />
                     <div className="flex items-center">
                         <input

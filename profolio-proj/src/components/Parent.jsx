@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Welcome from "./Welcome";
+import Welcome from "./welcome";
 import Projects from "./Projects";
 
 const Parent = () => {
