@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import React from "react";
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
 
 const Contact = () => {
     const [email, setEmail] = useState("");
@@ -11,6 +11,9 @@ const Contact = () => {
     const [message, setMessage] = useState("");
     const [companyName, setCompanyName] = useState("");
     const [sendCV, setSendCV] = useState(false);
+    const [statusMessage, setStatusMessage] = useState("");
+    const [statusType, setStatusType] = useState(""); // "success" or "error"
+    const [showPopup, setShowPopup] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,30 +21,45 @@ const Contact = () => {
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailRegex.test(email)) {
             setEmailError("Please enter a valid email address.");
-        } else {
-            setEmailError("");
-
-            // Construct the email data to send
-            const emailData = {
-                name,
-                email,
-                message,
-                isCompany: isCompany ? "Yes" : "No",
-                companyName,
-                sendCV: sendCV ? "Yes" : "No",
-            };
-
-            // Send email using EmailJS
-            emailjs.send('service_423wnkn', 'template_8yx4t59', emailData, 'gsr529LqTVxZosW70')
-                .then((response) => {
-                    console.log('Email sent successfully:', response);
-                    alert('Your message has been sent!');
-                })
-                .catch((error) => {
-                    console.log('Email sending error:', error);
-                    alert('Something went wrong, please try again.');
-                });
+            return;
         }
+        
+        setEmailError("");
+        setStatusMessage(""); // Reset previous message
+
+        const emailData = {
+            name,
+            email,
+            message,
+            isCompany: isCompany ? "Yes" : "No",
+            companyName,
+            sendCV: sendCV ? "Yes" : "No",
+        };
+
+        emailjs.send('service_423wnkn', 'template_8yx4t59', emailData, 'gsr529LqTVxZosW70')
+            .then(() => {
+                setStatusMessage("Your message has been sent successfully!");
+                setStatusType("success");
+                setShowPopup(true);
+                
+                // Clear form after submission
+                setName("");
+                setEmail("");
+                setMessage("");
+                setIsCompany(false);
+                setCompanyName("");
+                setSendCV(false);
+            })
+            .catch(() => {
+                setStatusMessage("Something went wrong. Please try again.");
+                setStatusType("error");
+                setShowPopup(true);
+            });
+
+        // Hide popup after 3 seconds
+        setTimeout(() => {
+            setShowPopup(false);
+        }, 3000);
     };
 
     return (
@@ -116,7 +134,7 @@ const Contact = () => {
                         onChange={(e) => setCompanyName(e.target.value)}
                         placeholder="Enter company name"
                         className="w-full p-3 border rounded-lg bg-white dark:bg-neutral-700 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500"
-                        required = {isCompany}
+                        required={isCompany}
                     />
                     <div className="flex items-center">
                         <input
@@ -131,15 +149,24 @@ const Contact = () => {
                 </div>
 
                 <div className="relative">
-                    <div className={`flex justify-center text-black dark:text-white mt-4 transition-all duration-500 ease-in-out transform ${
+                <div className={`flex justify-center text-black dark:text-white mt-4 transition-all duration-500 ease-in-out transform ${
                         isCompany ? "translate-y-[-10px]" : "translate-y-[-150px]"
                     }`}>
-                        <button type="submit" className="px-6 py-3 border-1 rounded-lg hover:bg-neutral-300 focus:ring-1">
+                        <button type="submit" className="px-6 py-3 border rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-500 focus:ring-1">
                             Submit
                         </button>
                     </div>
                 </div>
             </form>
+
+            {/* Popup Notification */}
+            {showPopup && (
+                <div className={`fixed top-25 right-5 px-6 py-3 rounded-lg shadow-md text-white ${
+                    statusType === "success" ? "bg-green-500" : "bg-red-500"
+                }`}>
+                    {statusMessage}
+                </div>
+            )}
         </section>
     );
 };

@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 /* Dark Mode Custom Variant */
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Transition for background-color change */
 html {
