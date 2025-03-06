@@ -3,7 +3,7 @@ import React from "react";
 
 const Welcome = ({ darkMode }) => {
     return (
-        <section id="welcome" className="relative flex justify-center items-center bg-gray-50 sm:h-[80vh] md:h-screen dark:bg-neutral-600 px-6 py-8">
+        <section id="welcome" className="relative flex justify-center items-center bg-gray-50 h-full lg:h-screen md:h-[150vh] dark:bg-neutral-600 px-6 py-8">
             <div className="max-w-4xl w-full text-center">
                 {/* Profile Image */}
                 <div className="flex justify-center items-center mb-6">
@@ -19,14 +19,14 @@ const Welcome = ({ darkMode }) => {
                         <img 
                             src="/github.png" 
                             alt="Github"
-                            className="rounded-full w-10 h-10 transition-all mt-10" 
+                            className="rounded-full w-10 h-10 transition-all dark:bg-neutral-400 dark:grayscale" 
                         />
                     </a>
                     <a href="https://www.linkedin.com/in/nir-froimovich-33156a185/" target="_blank" rel="noopener noreferrer">
                         <img 
                             src="/linkedin.png" 
                             alt="LinkedIn"
-                            className="w-10 h-10 transition-all mt-10" 
+                            className="w-10 h-10 transition-all" 
                         />
                     </a>
                 </div>
