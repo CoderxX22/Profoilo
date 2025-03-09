@@ -144,7 +144,7 @@ const Contact = () => {
                             onChange={() => setSendCV(!sendCV)}
                             className="mr-3 w-5 h-5 text-blue-500 border-gray-300 dark:border-gray-700 dark:bg-neutral-700 dark:text-gray-200"
                         />
-                        <label className="text-lg text-gray-700 dark:text-gray-200 font-light" htmlFor="CV">I'll be glad if you send me your CV</label>
+                        <label className="text-lg text-gray-700 dark:text-gray-200 font-light" htmlFor="CV">I'd to receive your CV</label>
                     </div>
                 </div>
 
