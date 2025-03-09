@@ -38,7 +38,6 @@ const Welcome = ({ darkMode }) => {
                     <p className="text-black dark:text-white font-light">My name is&nbsp;</p>
                     <h1 className="text-neutral-900 dark:text-neutral-200">{"Nir Froimovich"}</h1>
                 </div>
-                <h1 className="text-neutral-900 dark:text-neutral-200 text-xl font-thin font-">"The Juniors Of Today Are The Seniors Of Tommorow"</h1>
             </div>
         </section>
     );
