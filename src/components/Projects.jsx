@@ -72,12 +72,19 @@ const Projects = () => {
             className="w-full flex flex-col md:flex-row items-center justify-center"
           >
             {/* Background Blur Image */}
-            <div
-              className="absolute inset-0 bg-cover bg-center rounded-lg blur-md dark:invert-100 dark:grayscale-100"
-              style={{
-                backgroundImage: `url(${projects[currentIndex].image})`,
-              }}
-            />
+            <div className="absolute inset-0">
+  {/* Background Image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center rounded-lg blur-xs"
+                style={{
+                  backgroundImage: `url(${projects[currentIndex].image})`,
+                }}
+              />
+
+              {/* Semi-transparent Gray Overlay */}
+              <div className="absolute inset-0 dark:bg-neutral-900 bg-neutral-50 opacity-60 rounded-lg" />
+            </div>
+
 
             {/* Project Details */}
             <div className="relative w-full lg:w-1/2 p-4 md:p-6 text-center z-10">
