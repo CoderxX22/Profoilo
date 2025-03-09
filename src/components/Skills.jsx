@@ -27,7 +27,7 @@ const Skills = () => {
     }, []);
 
     return (
-        <section id="skills" className="relative min-h-screen bg-gray-50 dark:bg-neutral-600 py-16">
+        <section id="skills" className="relative h-fit bg-gray-50 dark:bg-neutral-600 py-16">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="flex justify-center items-center flex-col mb-12">
                     <h1 className="text-4xl font-semibold text-gray-800 dark:text-white mb-4">Skills</h1>

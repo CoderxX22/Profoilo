@@ -19,7 +19,7 @@ const Welcome = ({ darkMode }) => {
                         <img 
                             src="/github.png" 
                             alt="Github"
-                            className="rounded-full w-10 h-10 transition-all dark:bg-neutral-400 dark:grayscale" 
+                            className="rounded-full w-10 h-10 transition-all" 
                         />
                     </a>
                     <a href="https://www.linkedin.com/in/nir-froimovich-33156a185/" target="_blank" rel="noopener noreferrer">

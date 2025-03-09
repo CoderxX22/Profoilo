@@ -63,7 +63,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="relative bg-gray-50 dark:bg-neutral-600 md:h-fit sm:h-fit h-screen px-6 py-16 flex flex-col items-center">
+        <section id="contact" className="relative bg-gray-50 dark:bg-neutral-600 md:h-fit sm:h-screen lg:h-fit px-6 py-16 flex flex-col items-center">
             <div className="text-center mb-12">
                 <h1 className="text-4xl font-bold text-gray-800 dark:text-white">Contact Me</h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 font-light max-w-xl mx-auto">
