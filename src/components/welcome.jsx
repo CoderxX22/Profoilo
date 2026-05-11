@@ -22,7 +22,7 @@ const Welcome = ({ darkMode }) => {
                             className="rounded-full w-10 h-10 transition-all" 
                         />
                     </a>
-                    <a href="https://www.linkedin.com/in/nir-froimovich-33156a185/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/nir-froiman-33156a185/" target="_blank" rel="noopener noreferrer">
                         <img 
                             src="/linkedin.png" 
                             alt="LinkedIn"
@@ -36,7 +36,7 @@ const Welcome = ({ darkMode }) => {
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4 sm:mb-6">{"Hi!"}</h1>
                 <div className="flex justify-center items-center text-2xl sm:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-4 sm:mb-6">
                     <p className="text-black dark:text-white font-light">My name is&nbsp;</p>
-                    <h1 className="text-neutral-900 dark:text-neutral-200">{"Nir Froimovich"}</h1>
+                    <h1 className="text-neutral-900 dark:text-neutral-200">{"Nir Froiman"}</h1>
                 </div>
             </div>
         </section>
